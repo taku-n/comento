@@ -1,0 +1,32 @@
+version: "3"
+
+services:
+
+  cccc:
+    build:
+      context: .
+      dockerfile: Dockerfile-cccc
+    image: cccc
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./cccc/letsencrypt:/etc/letsencrypt
+      - ./cccc/root:/etc/crontabs/root
+      - ./cccc/nginx.conf:/etc/nginx/nginx.conf
+      - ./cccc/conf.d:/etc/nginx/conf.d
+      - ./cccc/log:/var/log/nginx
+      - ./cccc/html:/usr/share/nginx/html
+    environment:
+      - DOMAIN=your.domain
+      - EMAIL=your@email.address
+      #- STAGE=production
+      - STAGE=staging
+    restart: always
+
+  web:
+    image: nginx:alpine
+    volumes:
+      - ./web/log:/var/log/nginx
+      - ./web/html:/usr/share/nginx/html
+    restart: always
