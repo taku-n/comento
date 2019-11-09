@@ -1,15 +1,15 @@
-FROM alpine
+FROM golang:alpine
 
 RUN apk update \
+    && apk add --no-cache build-base
     && apk add --no-cache sqlite
 
-RUN mkdir -p /app/cert
+COPY main.go /go/src
 
-ADD init.sh  /app/cert
-ADD renew.sh  /app/cert
+RUN mkdir /comento
 
-WORKDIR /app/cert
+WORKDIR /comento
 
-EXPOSE 80 443
+EXPOSE 8080
 
-CMD ["sh", "./init.sh"]
+CMD ["main"]

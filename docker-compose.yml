@@ -24,9 +24,11 @@ services:
       - STAGE=staging
     restart: always
 
-  web:
-    image: nginx:alpine
+  comento:
+    build:
+      context: .
+      dockerfile: Dockerfile-comento
+    image: comento
     volumes:
-      - ./web/log:/var/log/nginx
-      - ./web/html:/usr/share/nginx/html
+      - ./comento:/comento
     restart: always

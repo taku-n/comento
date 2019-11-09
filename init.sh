@@ -1,5 +1,3 @@
-#!/bin/sh
-
 echo "---- init.sh begins ----"
 
 nginx
