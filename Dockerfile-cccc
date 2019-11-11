@@ -5,8 +5,8 @@ RUN apk update \
 
 RUN mkdir -p /app/cert
 
-ADD init.sh  /app/cert
-ADD renew.sh  /app/cert
+COPY init.sh  /app/cert
+COPY renew.sh  /app/cert
 
 WORKDIR /app/cert
 
