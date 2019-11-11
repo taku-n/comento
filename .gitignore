@@ -1,4 +1,7 @@
 *.swp
 
+cccc.conf
+
+go.sum
 main
 *.db

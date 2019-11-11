@@ -27,7 +27,7 @@ func root(w http.ResponseWriter, r *http.Request) {
 func get_all(w http.ResponseWriter, r *http.Request) {
 	Println("---- get_all() begins ----")
 
-	w.Header().Set("Access-Control-Allow-Origin", "*")
+	//w.Header().Set("Access-Control-Allow-Origin", "*")
 
 	Println("---- sql.Open() begins ----")
 	db, err := sql.Open("sqlite3", "comento/comento.db")
@@ -75,7 +75,7 @@ func get(w http.ResponseWriter, r *http.Request) {
 
 	r.ParseForm()
 
-	w.Header().Set("Access-Control-Allow-Origin", "*")
+	//w.Header().Set("Access-Control-Allow-Origin", "*")
 
 	db, err := sql.Open("sqlite3", "comento/comento.db")
 	if err != nil {
@@ -120,7 +120,7 @@ func post(w http.ResponseWriter, r *http.Request) {
 
 	r.ParseForm()
 
-	w.Header().Set("Access-Control-Allow-Origin", "*")
+	//w.Header().Set("Access-Control-Allow-Origin", "*")
 
 	Fprintln(w, r.Form)
 	Fprintln(w, r.Form["thread"][0])

@@ -11,7 +11,7 @@ services:
       - "80:80"
       - "443:443"
     volumes:
-      - ./cccc/letsencrypt:/etc/letsencrypt
+      - letsencrypt:/etc/letsencrypt
       - ./cccc/root:/etc/crontabs/root
       - ./cccc/nginx.conf:/etc/nginx/nginx.conf
       - ./cccc/conf.d:/etc/nginx/conf.d
@@ -32,3 +32,6 @@ services:
     volumes:
       - ./comento:/go/src/comento
     restart: always
+
+volumes:
+  letsencrypt:
