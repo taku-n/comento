@@ -16,5 +16,5 @@ $ nvim docker-compose.yml
 $ docker-compose up -d
 ```
 
-Comento's comment data is in "comento/comento.db".
+Comento's comment data is in "comento/comento.db".  
 You can open it with "$ sqlite3 comento/comento.db".
