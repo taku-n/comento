@@ -18,3 +18,6 @@ $ docker-compose up -d
 
 Comento's comment data is in "comento/comento.db".  
 You can open it with "$ sqlite3 comento/comento.db".
+
+Comento uses cccc as a reverse proxy.  
+See "https://github.com/taku-n/cccc".
