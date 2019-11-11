@@ -14,7 +14,12 @@ server {
     add_header X-Content-Type-Options nosniff;
 
     location / {
-        proxy_pass         http://web/;
+        add_header Access-Control-Allow-Origin * always;
+        add_header Access-Control-Allow-Methods "POST, GET, OPTIONS";
+        add_header Access-Control-Allow-Headers "Origin, Authorization, Accept";
+        add_header Access-Control-Allow-Credentials true;
+
+        proxy_pass         http://comento:8080/;
         proxy_redirect     off;
         proxy_set_header   Host $host;
         proxy_set_header   X-Real-IP $remote_addr;

@@ -1,6 +1,4 @@
 *.swp
 
-cccc/letsencrypt/
-
 main
 *.db

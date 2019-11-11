@@ -30,5 +30,5 @@ services:
       dockerfile: Dockerfile-comento
     image: comento
     volumes:
-      - ./comento:/comento
+      - ./comento:/go/src/comento
     restart: always
