@@ -51,9 +51,16 @@ Data Form is JSON.
 $ curl https://your.domain/get?thread=/page1.html
 [{"name":"name1","comment":"comment1"},{"name":"name2","comment":"comment2"}]
 
+# Do you use staging level certificates?
+$ curl -k https://your.domain/get?thread=/page1.html
+
+
 # Get all comments.
 $ curl https://your.domain/get_all
 [{"thread":"/page1.html","name":"name1","comment":"comment1"},{"thread":"/page1.html","name":"name2","comment":"comment2"},{"thread":"/page2.html","name":"name1","comment":"comment1"}]
+
+# Do you use staging level certificates?
+$ curl -k https://your.domain/get_all
 ```
 
 Comento's comment data is in "comento/comento.db".  
